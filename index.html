@@ -6,71 +6,55 @@
 <title>ABOD STORE</title>
 
 <style>
-* {
-    box-sizing: border-box;
+*{box-sizing:border-box}
+body{
+margin:0;background:#090909;color:white;
+font-family:Arial,sans-serif;text-align:center
 }
-
-body {
-    background: #101010;
-    color: white;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    text-align: center;
+header{
+background:linear-gradient(135deg,#e60000,#650000);
+padding:30px 15px
 }
-
-header {
-    background: #e60000;
-    padding: 25px;
+header h1{font-size:34px;margin:0}
+header p{color:#eee}
+.container{max-width:850px;margin:auto;padding:18px}
+h2{color:#ff3030}
+.games{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(145px,1fr));
+gap:14px
 }
-
-header h1 {
-    font-size: 35px;
-    margin: 0;
+.card{
+background:#191919;
+border:1px solid #a90000;
+border-radius:14px;
+padding:20px 10px;
+cursor:pointer;
+transition:.2s
 }
-
-.container {
-    padding: 20px;
-    max-width: 600px;
-    margin: auto;
+.card:hover{background:#303030;transform:scale(1.03)}
+.icon{font-size:42px}
+.card h3{margin:10px 0}
+.panel{
+background:#191919;
+border-radius:14px;
+padding:20px;
+margin-top:25px;
+border:1px solid #e60000
 }
-
-h2 {
-    color: #ff3030;
+input,select{
+width:100%;padding:13px;margin:8px 0;
+border:0;border-radius:8px;font-size:16px
 }
-
-.game {
-    background: #222;
-    margin: 18px 0;
-    padding: 22px;
-    border-radius: 12px;
-    border: 1px solid red;
+button{
+background:#e60000;color:white;border:0;
+padding:13px 20px;border-radius:8px;
+font-size:17px;cursor:pointer;margin:5px
 }
-
-input, select {
-    width: 100%;
-    padding: 13px;
-    margin: 10px 0;
-    border-radius: 8px;
-    border: none;
-    font-size: 16px;
-}
-
-button {
-    background: #e60000;
-    color: white;
-    border: none;
-    padding: 13px 25px;
-    border-radius: 8px;
-    font-size: 17px;
-    cursor: pointer;
-}
-
-footer {
-    background: #222;
-    padding: 20px;
-    margin-top: 30px;
-    color: #aaa;
-}
+button:hover{background:#a00000}
+#selected{color:#ff5555;font-size:20px}
+footer{background:#181818;padding:20px;margin-top:35px;color:#aaa}
+.hidden{display:none}
 </style>
 </head>
 
@@ -83,68 +67,67 @@ footer {
 
 <div class="container">
 
-<h2>🎮 اطلب شحنتك الآن</h2>
+<h2>🎮 اختر لعبتك</h2>
 
-<div class="game">
+<div class="games">
 
-<form onsubmit="sendOrder(event)">
-
-<select id="game" required>
-<option value="">اختر اللعبة</option>
-<option>Free Fire</option>
-<option>PUBG Mobile</option>
-<option>Roblox</option>
-<option>Mobile Legends</option>
-</select>
-
-<input type="text" id="player" placeholder="أدخل ID اللاعب" required>
-
-<select id="package" required>
-<option value="">اختر باقة الشحن</option>
-<option>باقة صغيرة</option>
-<option>باقة متوسطة</option>
-<option>باقة كبيرة</option>
-<option>باقة أخرى</option>
-</select>
-
-<input type="text" id="customer" placeholder="اسمك" required>
-
-<button type="submit">إرسال الطلب عبر واتساب</button>
-
-</form>
-
-</div>
+<div class="card" onclick="choose('Free Fire')">
+<div class="icon">🔥</div>
+<h3>Free Fire</h3>
+<p>شحن جواهر</p>
 </div>
 
-<footer>
-<p>© 2026 ABOD STORE</p>
-<p>جميع الحقوق محفوظة</p>
-</footer>
+<div class="card" onclick="choose('PUBG Mobile')">
+<div class="icon">🎯</div>
+<h3>PUBG Mobile</h3>
+<p>شحن شدات</p>
+</div>
 
-<script>
-function sendOrder(event) {
-    event.preventDefault();
+<div class="card" onclick="choose('Roblox')">
+<div class="icon">🟦</div>
+<h3>Roblox</h3>
+<p>Robux</p>
+</div>
 
-    const game = document.getElementById("game").value;
-    const player = document.getElementById("player").value;
-    const pack = document.getElementById("package").value;
-    const customer = document.getElementById("customer").value;
+<div class="card" onclick="choose('Mobile Legends')">
+<div class="icon">⚔️</div>
+<h3>Mobile Legends</h3>
+<p>شحن ماسات</p>
+</div>
 
-    const message =
-        "طلب جديد من ABOD STORE 🔥\n\n" +
-        "اللعبة: " + game + "\n" +
-        "ID اللاعب: " + player + "\n" +
-        "باقة الشحن: " + pack + "\n" +
-        "اسم الزبون: " + customer;
+<div class="card" onclick="choose('Call of Duty Mobile')">
+<div class="icon">🎮</div>
+<h3>Call of Duty</h3>
+<p>شحن CP</p>
+</div>
 
-    const phone = "963935310973";
+<div class="card" onclick="choose('eFootball')">
+<div class="icon">⚽</div>
+<h3>eFootball</h3>
+<p>كوينز</p>
+</div>
 
-    const url = "https://wa.me/" + phone +
-        "?text=" + encodeURIComponent(message);
+<div class="card" onclick="choose('Clash of Clans')">
+<div class="icon">🏰</div>
+<h3>Clash of Clans</h3>
+<p>جواهر</p>
+</div>
 
-    window.open(url, "_blank");
-}
-</script>
+<div class="card" onclick="choose('Clash Royale')">
+<div class="icon">💎</div>
+<h3>Clash Royale</h3>
+<p>جواهر</p>
+</div>
 
-</body>
-</html>
+</div>
+
+<div class="panel hidden" id="order">
+
+<h2>🛒 إنشاء طلب</h2>
+
+<p id="selected"></p>
+
+<input id="player" placeholder="أدخل ID اللاعب">
+
+<select id="package">
+<option value="">اخ

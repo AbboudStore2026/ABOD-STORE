@@ -28,10 +28,6 @@ header h1 {
     margin: 0;
 }
 
-header p {
-    margin-bottom: 0;
-}
-
 .container {
     padding: 20px;
     max-width: 600px;
@@ -47,11 +43,16 @@ h2 {
     margin: 18px 0;
     padding: 22px;
     border-radius: 12px;
-    border: 1px solid #e60000;
+    border: 1px solid red;
 }
 
-.game h3 {
-    font-size: 23px;
+input, select {
+    width: 100%;
+    padding: 13px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
 }
 
 button {
@@ -62,10 +63,6 @@ button {
     border-radius: 8px;
     font-size: 17px;
     cursor: pointer;
-}
-
-button:hover {
-    background: #aa0000;
 }
 
 footer {
@@ -80,54 +77,72 @@ footer {
 <body>
 
 <header>
-    <h1>🔥 ABOD STORE</h1>
-    <p>متجرك الأول لشحن الألعاب والخدمات الرقمية</p>
+<h1>🔥 ABOD STORE</h1>
+<p>متجرك الأول لشحن الألعاب والخدمات الرقمية</p>
 </header>
 
 <div class="container">
 
-    <h2>🎮 اختر لعبتك</h2>
+<h2>🎮 اطلب شحنتك الآن</h2>
 
-    <div class="game">
-        <h3>🔥 Free Fire</h3>
-        <p>شحن جواهر فري فاير</p>
-        <button onclick="order('Free Fire')">اطلب الآن</button>
-    </div>
+<div class="game">
 
-    <div class="game">
-        <h3>🎯 PUBG Mobile</h3>
-        <p>شحن شدات ببجي</p>
-        <button onclick="order('PUBG Mobile')">اطلب الآن</button>
-    </div>
+<form onsubmit="sendOrder(event)">
 
-    <div class="game">
-        <h3>🟦 Roblox</h3>
-        <p>خدمات وروبوكس</p>
-        <button onclick="order('Roblox')">اطلب الآن</button>
-    </div>
+<select id="game" required>
+<option value="">اختر اللعبة</option>
+<option>Free Fire</option>
+<option>PUBG Mobile</option>
+<option>Roblox</option>
+<option>Mobile Legends</option>
+</select>
 
-    <div class="game">
-        <h3>⚔️ Mobile Legends</h3>
-        <p>شحن الماسات</p>
-        <button onclick="order('Mobile Legends')">اطلب الآن</button>
-    </div>
+<input type="text" id="player" placeholder="أدخل ID اللاعب" required>
 
-    <div class="game">
-        <h3>📱 خدمات التطبيقات</h3>
-        <p>خدمات رقمية متنوعة</p>
-        <button onclick="order('خدمات التطبيقات')">اطلب الآن</button>
-    </div>
+<select id="package" required>
+<option value="">اختر باقة الشحن</option>
+<option>باقة صغيرة</option>
+<option>باقة متوسطة</option>
+<option>باقة كبيرة</option>
+<option>باقة أخرى</option>
+</select>
 
+<input type="text" id="customer" placeholder="اسمك" required>
+
+<button type="submit">إرسال الطلب عبر واتساب</button>
+
+</form>
+
+</div>
 </div>
 
 <footer>
-    <p>© 2026 ABOD STORE</p>
-    <p>جميع الحقوق محفوظة</p>
+<p>© 2026 ABOD STORE</p>
+<p>جميع الحقوق محفوظة</p>
 </footer>
 
 <script>
-function order(game) {
-    alert("لقد اخترت: " + game + "\nسيتم إضافة نظام الطلبات قريباً!");
+function sendOrder(event) {
+    event.preventDefault();
+
+    const game = document.getElementById("game").value;
+    const player = document.getElementById("player").value;
+    const pack = document.getElementById("package").value;
+    const customer = document.getElementById("customer").value;
+
+    const message =
+        "طلب جديد من ABOD STORE 🔥\n\n" +
+        "اللعبة: " + game + "\n" +
+        "ID اللاعب: " + player + "\n" +
+        "باقة الشحن: " + pack + "\n" +
+        "اسم الزبون: " + customer;
+
+    const phone = "963935310973";
+
+    const url = "https://wa.me/" + phone +
+        "?text=" + encodeURIComponent(message);
+
+    window.open(url, "_blank");
 }
 </script>
 

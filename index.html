@@ -131,3 +131,36 @@ footer{background:#181818;padding:20px;margin-top:35px;color:#aaa}
 
 <select id="package">
 <option value="">اخ
+<section class="panel" id="shamcash">
+  <h2>💚 الدفع عبر شام كاش</h2>
+
+  <p>معرّف المحفظة:</p>
+  <div dir="ltr" style="background:#222;padding:12px;border-radius:8px">
+    af045c5e7d81a400bd1ac9184eb356b8
+  </div>
+
+  <button onclick="navigator.clipboard.writeText('af045c5e7d81a400bd1ac9184eb356b8')">
+    نسخ معرّف الدفع
+  </button>
+
+  <p>بعد التحويل، ارفع صورة الإيصال:</p>
+  <input type="file" id="receipt" accept="image/*">
+
+  <button onclick="sendReceipt()">تأكيد إرسال الإيصال</button>
+
+  <p id="paymentMessage"></p>
+</section>
+
+<script>
+function sendReceipt(){
+  const file = document.getElementById('receipt').files[0];
+
+  if(!file){
+    alert('يرجى اختيار صورة الإيصال');
+    return;
+  }
+
+  document.getElementById('paymentMessage').textContent =
+    'تم اختيار الإيصال. يلزم ربط نظام استقبال الطلبات لإرساله.';
+}
+</script>

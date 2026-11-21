@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ABOD STORE</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: #101010;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    text-align: center;
+}
+
+header {
+    background: #e60000;
+    padding: 25px;
+}
+
+header h1 {
+    font-size: 35px;
+    margin: 0;
+}
+
+header p {
+    margin-bottom: 0;
+}
+
+.container {
+    padding: 20px;
+    max-width: 600px;
+    margin: auto;
+}
+
+h2 {
+    color: #ff3030;
+}
+
+.game {
+    background: #222;
+    margin: 18px 0;
+    padding: 22px;
+    border-radius: 12px;
+    border: 1px solid #e60000;
+}
+
+.game h3 {
+    font-size: 23px;
+}
+
+button {
+    background: #e60000;
+    color: white;
+    border: none;
+    padding: 13px 25px;
+    border-radius: 8px;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #aa0000;
+}
+
+footer {
+    background: #222;
+    padding: 20px;
+    margin-top: 30px;
+    color: #aaa;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>🔥 ABOD STORE</h1>
+    <p>متجرك الأول لشحن الألعاب والخدمات الرقمية</p>
+</header>
+
+<div class="container">
+
+    <h2>🎮 اختر لعبتك</h2>
+
+    <div class="game">
+        <h3>🔥 Free Fire</h3>
+        <p>شحن جواهر فري فاير</p>
+        <button onclick="order('Free Fire')">اطلب الآن</button>
+    </div>
+
+    <div class="game">
+        <h3>🎯 PUBG Mobile</h3>
+        <p>شحن شدات ببجي</p>
+        <button onclick="order('PUBG Mobile')">اطلب الآن</button>
+    </div>
+
+    <div class="game">
+        <h3>🟦 Roblox</h3>
+        <p>خدمات وروبوكس</p>
+        <button onclick="order('Roblox')">اطلب الآن</button>
+    </div>
+
+    <div class="game">
+        <h3>⚔️ Mobile Legends</h3>
+        <p>شحن الماسات</p>
+        <button onclick="order('Mobile Legends')">اطلب الآن</button>
+    </div>
+
+    <div class="game">
+        <h3>📱 خدمات التطبيقات</h3>
+        <p>خدمات رقمية متنوعة</p>
+        <button onclick="order('خدمات التطبيقات')">اطلب الآن</button>
+    </div>
+
+</div>
+
+<footer>
+    <p>© 2026 ABOD STORE</p>
+    <p>جميع الحقوق محفوظة</p>
+</footer>
+
+<script>
+function order(game) {
+    alert("لقد اخترت: " + game + "\nسيتم إضافة نظام الطلبات قريباً!");
+}
+</script>
+
+</body>
+</html>

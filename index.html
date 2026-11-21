@@ -2,59 +2,63 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ABOD STORE</title>
 
 <style>
 *{box-sizing:border-box}
 body{
 margin:0;background:#090909;color:white;
-font-family:Arial,sans-serif;text-align:center
+font-family:Arial;text-align:center
 }
 header{
-background:linear-gradient(135deg,#e60000,#650000);
+background:linear-gradient(135deg,#e60000,#550000);
 padding:30px 15px
 }
-header h1{font-size:34px;margin:0}
-header p{color:#eee}
-.container{max-width:850px;margin:auto;padding:18px}
+header h1{font-size:35px;margin:0}
+.container{max-width:900px;margin:auto;padding:18px}
 h2{color:#ff3030}
 .games{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(145px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
 gap:14px
 }
 .card{
 background:#191919;
 border:1px solid #a90000;
-border-radius:14px;
-padding:20px 10px;
-cursor:pointer;
-transition:.2s
+border-radius:15px;
+padding:18px 8px;
+cursor:pointer
 }
-.card:hover{background:#303030;transform:scale(1.03)}
-.icon{font-size:42px}
+.card:active{transform:scale(.97)}
+.icon{font-size:43px}
 .card h3{margin:10px 0}
 .panel{
 background:#191919;
-border-radius:14px;
+border-radius:15px;
 padding:20px;
 margin-top:25px;
 border:1px solid #e60000
 }
 input,select{
-width:100%;padding:13px;margin:8px 0;
-border:0;border-radius:8px;font-size:16px
+width:100%;
+padding:13px;
+margin:8px 0;
+border:0;border-radius:8px;
+font-size:16px
 }
 button{
-background:#e60000;color:white;border:0;
-padding:13px 20px;border-radius:8px;
-font-size:17px;cursor:pointer;margin:5px
+background:#e60000;color:white;
+border:0;padding:13px 20px;
+border-radius:8px;font-size:17px;
+margin:5px;cursor:pointer
 }
-button:hover{background:#a00000}
-#selected{color:#ff5555;font-size:20px}
-footer{background:#181818;padding:20px;margin-top:35px;color:#aaa}
 .hidden{display:none}
+#selected{color:#ff5555;font-size:20px}
+footer{
+background:#181818;
+padding:20px;margin-top:35px;color:#aaa
+}
 </style>
 </head>
 
@@ -62,25 +66,25 @@ footer{background:#181818;padding:20px;margin-top:35px;color:#aaa}
 
 <header>
 <h1>🔥 ABOD STORE</h1>
-<p>متجرك الأول لشحن الألعاب والخدمات الرقمية</p>
+<p>متجرك الأول للألعاب والتطبيقات الرقمية</p>
 </header>
 
 <div class="container">
 
-<h2>🎮 اختر لعبتك</h2>
+<h2>🎮 الألعاب</h2>
 
 <div class="games">
 
 <div class="card" onclick="choose('Free Fire')">
 <div class="icon">🔥</div>
 <h3>Free Fire</h3>
-<p>شحن جواهر</p>
+<p>جواهر</p>
 </div>
 
 <div class="card" onclick="choose('PUBG Mobile')">
 <div class="icon">🎯</div>
 <h3>PUBG Mobile</h3>
-<p>شحن شدات</p>
+<p>شدات</p>
 </div>
 
 <div class="card" onclick="choose('Roblox')">
@@ -92,13 +96,13 @@ footer{background:#181818;padding:20px;margin-top:35px;color:#aaa}
 <div class="card" onclick="choose('Mobile Legends')">
 <div class="icon">⚔️</div>
 <h3>Mobile Legends</h3>
-<p>شحن ماسات</p>
+<p>ماسات</p>
 </div>
 
-<div class="card" onclick="choose('Call of Duty Mobile')">
+<div class="card" onclick="choose('Call of Duty')">
 <div class="icon">🎮</div>
 <h3>Call of Duty</h3>
-<p>شحن CP</p>
+<p>CP</p>
 </div>
 
 <div class="card" onclick="choose('eFootball')">
@@ -110,13 +114,37 @@ footer{background:#181818;padding:20px;margin-top:35px;color:#aaa}
 <div class="card" onclick="choose('Clash of Clans')">
 <div class="icon">🏰</div>
 <h3>Clash of Clans</h3>
-<p>جواهر</p>
 </div>
 
 <div class="card" onclick="choose('Clash Royale')">
 <div class="icon">💎</div>
 <h3>Clash Royale</h3>
-<p>جواهر</p>
+</div>
+
+</div>
+
+<h2>📱 التطبيقات</h2>
+
+<div class="games">
+
+<div class="card" onclick="choose('TikTok')">
+<div class="icon">🎵</div>
+<h3>TikTok</h3>
+</div>
+
+<div class="card" onclick="choose('Instagram')">
+<div class="icon">📸</div>
+<h3>Instagram</h3>
+</div>
+
+<div class="card" onclick="choose('YouTube')">
+<div class="icon">▶️</div>
+<h3>YouTube</h3>
+</div>
+
+<div class="card" onclick="choose('Snapchat')">
+<div class="icon">👻</div>
+<h3>Snapchat</h3>
 </div>
 
 </div>
@@ -127,40 +155,112 @@ footer{background:#181818;padding:20px;margin-top:35px;color:#aaa}
 
 <p id="selected"></p>
 
-<input id="player" placeholder="أدخل ID اللاعب">
+<input id="player" placeholder="ID اللاعب أو اسم المستخدم">
 
 <select id="package">
-<option value="">اخ
-<section class="panel" id="shamcash">
-  <h2>💚 الدفع عبر شام كاش</h2>
+<option value="">اختر الباقة</option>
+<option>باقة صغيرة</option>
+<option>باقة متوسطة</option>
+<option>باقة كبيرة</option>
+</select>
 
-  <p>معرّف المحفظة:</p>
-  <div dir="ltr" style="background:#222;padding:12px;border-radius:8px">
-    af045c5e7d81a400bd1ac9184eb356b8
-  </div>
+<input id="price" type="number" placeholder="السعر">
 
-  <button onclick="navigator.clipboard.writeText('af045c5e7d81a400bd1ac9184eb356b8')">
-    نسخ معرّف الدفع
-  </button>
+<button onclick="showPayment()">متابعة للدفع</button>
 
-  <p>بعد التحويل، ارفع صورة الإيصال:</p>
-  <input type="file" id="receipt" accept="image/*">
+</div>
 
-  <button onclick="sendReceipt()">تأكيد إرسال الإيصال</button>
+<div class="panel hidden" id="payment">
 
-  <p id="paymentMessage"></p>
-</section>
+<h2>💚 الدفع عبر شام كاش</h2>
+
+<p>معرّف المحفظة:</p>
+
+<div dir="ltr" id="wallet"
+style="background:#222;padding:13px;border-radius:8px">
+af045c5e7d81a400bd1ac9184eb356b8
+</div>
+
+<button onclick="copyWallet()">نسخ معرّف المحفظة</button>
+
+<p>ارفع صورة إيصال التحويل:</p>
+
+<input type="file" id="receipt" accept="image/*">
+
+<button onclick="finishOrder()">إرسال الطلب</button>
+
+<p id="message"></p>
+
+</div>
+
+</div>
+
+<footer>
+🔥 ABOD STORE
+<p>شكراً لثقتكم بنا ❤️</p>
+</footer>
 
 <script>
-function sendReceipt(){
-  const file = document.getElementById('receipt').files[0];
 
-  if(!file){
-    alert('يرجى اختيار صورة الإيصال');
-    return;
-  }
+let selectedGame="";
 
-  document.getElementById('paymentMessage').textContent =
-    'تم اختيار الإيصال. يلزم ربط نظام استقبال الطلبات لإرساله.';
+function choose(game){
+selectedGame=game;
+document.getElementById("selected").textContent=
+"اللعبة أو التطبيق: "+game;
+
+document.getElementById("order").classList.remove("hidden");
+document.getElementById("payment").classList.add("hidden");
+
+document.getElementById("order").scrollIntoView({
+behavior:"smooth"
+});
 }
+
+function showPayment(){
+
+let player=document.getElementById("player").value;
+let pack=document.getElementById("package").value;
+let price=document.getElementById("price").value;
+
+if(!player||!pack||!price||Number(price)<=0){
+alert("يرجى إكمال جميع البيانات");
+return;
+}
+
+document.getElementById("payment").classList.remove("hidden");
+
+document.getElementById("payment").scrollIntoView({
+behavior:"smooth"
+});
+
+}
+
+function copyWallet(){
+
+let wallet=document.getElementById("wallet").textContent.trim();
+
+navigator.clipboard.writeText(wallet)
+.then(()=>alert("تم نسخ معرّف شام كاش"))
+.catch(()=>alert("انسخ المعرّف يدوياً"));
+
+}
+
+function finishOrder(){
+
+let receipt=document.getElementById("receipt").files[0];
+
+if(!receipt){
+alert("يرجى رفع صورة الإيصال");
+return;
+}
+
+document.getElementById("message").textContent=
+"تم اختيار الإيصال. لم يتم إرسال الطلب أو التحقق من الدفع بعد.";
+
+}
+
 </script>
+
+</body>
+</html>
